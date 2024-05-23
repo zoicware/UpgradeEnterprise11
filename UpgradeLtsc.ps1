@@ -14,11 +14,10 @@ foreach ($folder in $folders) {
 
 Write-Host 'Skus Installed...Updating...'
 #upgrade 
-cscript.exe $env:SystemRoot\system32\slmgr.vbs /rilc
-cscript.exe $env:SystemRoot\system32\slmgr.vbs /upk 
-cscript.exe $env:SystemRoot\system32\slmgr.vbs /ckms 
-cscript.exe $env:SystemRoot\system32\slmgr.vbs /cpky 
-cscript.exe $env:SystemRoot\system32\slmgr.vbs /ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
-
+Start-Process cscript.exe -ArgumentList "$env:SystemRoot\system32\slmgr.vbs /rilc" -Wait
+Start-Process cscript.exe -ArgumentList "$env:SystemRoot\system32\slmgr.vbs /upk" -Wait
+Start-Process cscript.exe -ArgumentList "$env:SystemRoot\system32\slmgr.vbs /ckms" -Wait 
+Start-Process cscript.exe -ArgumentList "$env:SystemRoot\system32\slmgr.vbs /cpky" -Wait
+Start-Process cscript.exe -ArgumentList "$env:SystemRoot\system32\slmgr.vbs /ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D" -Wait
 Write-Host 'Restart to Finish...'
 pause
